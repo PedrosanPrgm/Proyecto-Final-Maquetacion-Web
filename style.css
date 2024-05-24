@@ -1,0 +1,341 @@
+/* NORMALIZACION */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /**esto mantiene el ancho y alto a pesar de padding y border*/
+    font-family: 'Inconsolata','monospace';
+    list-style: none; /*Esto quita los puntos y decoracion de las listas */
+    text-decoration: none; /*Esto es para que los enlaces no tengan subrayado */
+    color: white;
+   
+}
+body{
+    background-color: black; /* to do: borrar cuando tengamos el fondo final*/
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+}
+
+header{
+    position: fixed; /*Esto hace q el header se quede fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100; /*Esto hace que el headder se muestre por encima*/
+    width: 100%;
+    display: flex;/*Esto hace que los elementos  se pongan en linea*/
+    align-items: center; /*Centra verticalmente*/
+    justify-content: space-between;/*Que los elementos se separen*/
+    padding: 40px 6%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.logo{/*Pedro Sanchez*/
+    font-size: 50px;
+    font-weight: 700; /*grosor*/
+}
+
+.navlist{
+    display: flex; /*Esto sirve para que los elementos de la lista UL se pongan en linea*/
+}
+.navlist a{
+    margin-left: 90px;
+    font-size: 35px;
+    font-weight: 700;
+    border-bottom: 3px solid transparent;
+    transition: all .5s ease ; /*Para animar todas las caracteristicas del navlist a*/
+}
+.navlist a:hover {
+    border-bottom: 3px solid white; /*Cuando se pase por encima el mouse aparece un subrayado blanco*/
+}
+
+#menu-icon{/*Menu para esconder la navlist*/
+    display: none; /*Esto se pone para que solo se vea cuando la pagina este colapsada */
+}
+
+#menu-icon{
+    font-size: 35px;
+    z-index: 101; /*para que su capa sea una mas alta que el header*/
+    cursor: pointer;
+}
+
+#menu-toggle{
+    display: none; /*Nunca quiero que se vea el checkbox*/ 
+}
+
+#menu-icon-action{
+    display: none; /*para que no se le pueda hacer el click*/ 
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative; /*para que sea relativo al contenedor(nos permite usar top,bottom,left y right*/
+    display: grid; /*para que el hero se pueda dividir en 2 columnas*/
+    grid-template-columns: 1fr 1fr; /* las 2 columnas*/ 
+    align-items: center; /*Para alinear verticalmente el hero*/
+    gap: 2rem; /*es para que haya espacio de 2rem entre las 2 columnas*/
+}
+section{
+    padding: 0 6%;
+}
+
+.hero-text h4 {  /*Maquetador web*/
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1{ /*Pedro Sanchez*/
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p {/*Aprende a programar con mis cursos*/
+    font-size: 30px;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img{/*Imagen redonda*/
+    width: 500px;
+    margin: 10px 0 0 20%;
+    border-radius: 50%;
+    height: 500px;
+    transition: all .5s linear; /*Esto hace que la transicion sea lineal*/
+}
+
+.hero-img img:hover{/*Imagen redonda en hover activo*/
+    height: 540px;
+    width: 540px;
+}
+ 
+.hero-text a{ /*Carteles de "CV" y "Mira mi portafolio"*/
+    display: inline-block;
+    background-color: #303030;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover{ /*Carteles en hover activo*/
+    background-color: transparent;
+    border: 2px solid white;
+    transform: translateX(8px);
+}
+.hero-text a.portafolio{/*Cartel de "Mira mi portafolio"*/
+    margin-left: 30px;
+}
+
+.hero-text a.portafolio i{/*Imagen del cartel de "Mira mi portafolio"*/
+    margin-right: 7px;
+    font-size: 20px;
+}
+
+.icons{ /*Iconos de la izquierda posicion*/
+    position: absolute;
+    top: 50vh;
+    padding: 0 1%;
+    transform: translateY(-70%);
+}
+.icons i{/*Iconos de la izquierda caract*/
+    display: block;
+    margin: 26px;
+    font-size: 30px;
+    transition: all .5s ease;
+}
+.icons i:hover{/*Iconos de la izquierda en hover activo*/
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{/*El scroll-down posicion*/
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{/*El scroll-down caract*/
+    display: block;
+    padding: 12px;
+    font-size: 65px;
+    transition:all .5s ease;
+}
+
+.scroll-down i:hover{/*scroll down en hover activo*/
+    transform: translateY(-5px);
+}
+/*Seccion Sobre mi*/
+.titulo-sobre-mi{
+    margin-top:100px ;
+    font-size:30px;
+    
+}
+/* aca vamos a hacer MEDIAQUERIES */
+/* LAPTOP */
+@media (max-width:1536px){
+        .logo{
+            font-size: 40px;
+        }
+        .navlist a{
+            font-size: 30px;
+            margin-left: 60px;
+        }
+        .hero-text h4 {
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+        
+        .hero-text h1{
+            font-family: 'Roboto Mono', monospace;
+            font-size: 40px;
+            line-height: 1;
+            margin: 0 0 30px;
+        }
+    
+        .hero-text p {
+            font-size: 25px;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .icons{
+            padding: 0 0.5%;
+            transform: translateY(-60%);
+        }
+        .icons i{
+            margin: 26px;
+            font-size: 25px;
+        }
+        .hero-img img{
+            width: 370px;
+            height: 370px;
+        }
+        .hero-img img:hover{
+            width: 400px;
+            height: 400px;
+        }
+        .scroll-down i{
+            font-size: 50px;
+        }
+}
+/* LAPTOP CHICA*/
+@media (max-width:1279px){
+        .logo{
+            font-size: 35px;
+        }
+        .navlist a{
+            font-size: 30px;
+            margin-left: 40px;
+        }
+        .hero-text{
+            padding-top: 50px; 
+        }
+        .hero-text h4 {
+            font-size: 30px;
+        }
+        
+        .hero-text h1{
+            font-size: 35px;
+        }
+    
+        .hero-text p {
+            font-size: 30px;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .icons{
+            padding: 0;
+            transform: translateY(-60%);
+        }
+
+        .hero-img img{
+            width: 350px;
+            height: 350px;
+        }
+        .hero-img img:hover{
+            width: 380px;
+            height: 380px;
+        }
+
+}
+/* TABLET O CELULAR ACOSTADO*/
+@media (max-width:992px){
+    header{
+        padding: 30px 3%;
+    }
+    .navlist a{
+        font-size: 30px;
+        margin-left: 35px;
+    }
+
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .hero-img img{
+        width: 330px;
+        height: 330px;
+    }
+    .hero-img img:hover{
+        width: 360px;
+        height: 360px;
+    }
+    .scroll-down{
+        display: none;
+    }
+    .icons{
+        display: none;
+    }
+
+}
+/* CELULAR */
+@media (max-width: 768px){
+    #menu-icon{
+        display: block;
+    }
+    .hero-text{
+        text-align: center;
+        padding-top:100px ;
+    }
+    .hero-img img{
+        margin: 0;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 210px;
+        background-color: #021f1cc5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+        transition: all .5s ease-out;
+    }
+    .navlist a{
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+    }
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right:0;
+    }
+}
